@@ -8,4 +8,5 @@ public interface Operation {
     double multiplication(double x, double y);
 
     double division(double x, double y) throws Exception;
+    long faktorial(int x);
 };

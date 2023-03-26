@@ -22,4 +22,9 @@ public class Calculation implements Operation {
             throw new Exception("Division by zero");
         } else return x / y;
     }
+
+    @Override
+    public long faktorial(int x) {
+        return 0;
+    }
 }
