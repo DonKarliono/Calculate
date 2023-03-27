@@ -12,7 +12,7 @@ public class MainForm {
     public MainForm() {
         mainFrame = new JFrame("Calculate");
         mainFrame.setSize(600, 400);
-        mainFrame.setLayout(new GridLayout(4,3));
+        mainFrame.setLayout(new GridLayout(4, 3));
 
 
         JPanel numberPanel = new JPanel(new GridLayout(3, 3));
@@ -21,7 +21,6 @@ public class MainForm {
         ActionListener testActionListener = new TestActionListener();
         numberPanel.setSize(300, 200);
         for (int i = 0; i < 9; i++) {
-
             JButton jButton = new JButton(String.valueOf(i));
             jButton.addActionListener(testActionListener);
             numberPanel.add(jButton);
@@ -51,18 +50,19 @@ public class MainForm {
         textPanel.setSize(40, 10);
 
 
-
-
         mainFrame.add(textField);
         mainFrame.add(numberPanel);
         mainFrame.add(operationPanel);
         mainFrame.setVisible(true);
     }
-    public class TestActionListener implements ActionListener{
+
+    public class TestActionListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            textField.setText(textField.getText() + e.getActionCommand());
+            if (textField.getText().equals("0")) {
+                textField.setText(e.getActionCommand());
+            }else textField.setText(textField.getText() + e.getActionCommand());
 
         }
     }
